@@ -182,11 +182,19 @@ class Organizer:
 	inter_line = self._inter_line
 	line_height = font_height + inter_line
 
+	# Draw the front lines:
 	front_lines = drawer._front_lines
 	for line_index in range(len(front_lines)):
 	    front_line = front_lines[line_index]
 	    self.text(front_line,
 	      x1 + (line_index *inter_line) + font_height, y2)
+
+	# Draw the bottom lines:
+	bottom_lines = drawer._bottom_lines
+	for line_index in range(len(bottom_lines)):
+	    bottom_line = bottom_lines[line_index]
+	    self.text(bottom_line,
+	      x2 + (line_index *inter_line) + font_height, y2)
 
 class Organizers:
     def __init__(self):
